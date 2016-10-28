@@ -1,5 +1,5 @@
-# jenkins-docker
-Jenkins inside Docker Container with DinD functionality.
+# **jenkins-docker**
+##### **Jenkins inside Docker Container with DinD functionality.**
 
 This project creates Jenkins inside the Docker along with functionality of Docker in Docker.
 
@@ -12,7 +12,9 @@ The reason for using `--privileged` flag is. if we’re going to use Docker in D
 Also, we need to add DNS provider than our default one. This is because mostly /etc/resolv.conf points to 127.0.0.1 on our host but this doesn’t work from the Docker container. 
 Hence, as a workaround we can use the `--dns` flag and point to, for example, Google's public DNS service using `8.8.8.8`
 
-Once the container is started, login to Jenkins Webpage through browser. Create a job to make it act as job-generator and add the dsl scripts which are available in dsl_scripts directory in the Build section, select the Process Job DSLs from the dropdown options. 
+Once the container is started, login to Jenkins Webpage. 
+Create a parent job which will act as job-generator and add the dsl scripts which are available within dsl_scripts directory in the Build section, select the Process Job DSLs from the dropdown options in Build section. 
+
 There are two dsl scripts:
-	1) docker_deploy_job.groovy : which pulls a html installed docker image and deploys a simple HTML file on it and through curl will show the output.
-	2) manual_deploy_job.groovy : which deploys a simple html file on apache server and shows the output using curl.
+- docker_deploy_job.groovy : which pulls a html installed docker image and deploys a simple HTML file on it and through curl will show the output.
+- manual_deploy_job.groovy : which deploys a simple html file on apache server and shows the output using curl.

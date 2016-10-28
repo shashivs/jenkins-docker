@@ -1,0 +1,10 @@
+docker-workflow
+email-ext
+ghprb
+git
+github
+job-dsl
+parameterized-trigger
+warnings
+workflow-aggregator
+ws-cleanup
